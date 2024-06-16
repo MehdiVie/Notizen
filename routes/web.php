@@ -18,7 +18,7 @@ use Illuminate\Routing\RouteFileRegistrar;
  * 
  * @param int user_id The `checkValidUser` function takes an integer parameter `` which
  * represents the ID of the user being checked for validity. This function is used to determine if the
- * current authenticated user has access to the specified user's information based on the provided user
+ * current authenticated user has access to the specified user's Notes based on the provided user
  * ID.
  * 
  * @return The function `checkValidUser` will return `true` if the conditions are met, otherwise it
