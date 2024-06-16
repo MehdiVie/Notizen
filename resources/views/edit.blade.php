@@ -20,6 +20,9 @@
     <!-- Description input -->
     <div data-mdb-input-init class="form-outline mb-4">
         <label class="form-label" for="description">Description</label>
+      <!-- The `<textarea>` element in the provided code snippet is used to create a multi-line text
+      input field for the "Description" of a note. Let's break down the attributes and content
+      within the `<textarea>` element: -->
       <textarea class="form-control" name="description" id="description" rows="12" style="white-space: pre-wrap; font-family:Helvetica Neue, Helvetica, Arial, and sans-serif; font-size: 20px; resize:none; ">{{str_replace('<br />', PHP_EOL, htmlspecialchars_decode($notiz->description))}}</textarea>
       @error('description')
       <p class="text-danger">{{$message}}</p>

@@ -6,6 +6,8 @@ use \App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use DB;
 
+/* The `LiveSearchController` class in PHP handles live search functionality by querying a database
+table based on user input and returning results in JSON format. */
 class LiveSearchController extends Controller
 {
     function index()
@@ -27,6 +29,8 @@ class LiveSearchController extends Controller
       if($query != '')
       {
         
+      /* The code snippet you provided is querying a database table named 'notizbuches' using Laravel's
+      Eloquent ORM. Here's a breakdown of what the query is doing: */
         $data = DB::table('notizbuches')
         ->where('user_id', auth()->user()->id)
         ->where(function($q) use($query) {

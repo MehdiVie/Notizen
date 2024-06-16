@@ -11,6 +11,19 @@ use \App\Http\Middleware\CheckPermission;
 use \App\Http\Requests\NotizRequest;
 use Illuminate\Routing\RouteFileRegistrar;
 
+
+/**
+ * The function `checkValidUser` in PHP checks if the authenticated user has access to a specific user
+ * ID.
+ * 
+ * @param int user_id The `checkValidUser` function takes an integer parameter `` which
+ * represents the ID of the user being checked for validity. This function is used to determine if the
+ * current authenticated user has access to the specified user's information based on the provided user
+ * ID.
+ * 
+ * @return The function `checkValidUser` will return `true` if the conditions are met, otherwise it
+ * will return `false` or output 'No Access.' and exit the script.
+ */
 function checkValidUser (int $user_id)  {
 
     if ((Auth::id() != $user_id) and ($user_id!=0)) {
@@ -26,6 +39,7 @@ function checkValidUser (int $user_id)  {
     return true;
   
 }
+
 
 Route::get('/',function(){
     return redirect()->route('notizbuch.index');
@@ -76,6 +90,9 @@ Route::get('/notiz/{notiz}/edit', function(Notizbuch $notiz) {
 })->name('notiz.edit');
 
 
+/* This specific block of code defines a POST route at '/notiz' in the application. When a POST request
+is made to this route, the function provided as the second argument will be executed. Here's a
+breakdown of what the function does: */
 Route::post('/notiz', function(NotizRequest $request){
     $data = $request->validated();
     
@@ -97,6 +114,9 @@ Route::post('/notiz', function(NotizRequest $request){
                      ->with('success', 'Note created successfully!');
 })->name('notiz.store');
 
+/* The `Route::put('/notiz/{notiz}', ...)` block of code defines a route in the application that
+handles a PUT request to update a specific note (`Notizbuch`). Here's a breakdown of what the
+function inside this route does: */
 Route::put('/notiz/{notiz}', function(Notizbuch $notiz,NotizRequest $request){
   $data = $request->validated();
     
@@ -132,6 +152,7 @@ Route::delete('logout',fn()=> to_route('auth.destroy'))->name('logout');
 Route::delete('auth', [AuthController::class,'destroy'])
         ->name('auth.destroy');
 
+/* These two lines of code are defining routes for a live search feature in the application. */
 Route::get('/live_search', [LiveSearchController::class, 'index']);
 Route::get('/live_search/action', [LiveSearchController::class, 'action'])->name('live_search.action');
 

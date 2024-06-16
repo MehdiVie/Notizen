@@ -4,6 +4,10 @@
 
 @section('content')
 
+    <!-- The line `<h3>{\!! str_replace('/<br.*>/U', '\r\n', htmlspecialchars_decode(->description))
+    !!}</h3>` is attempting to replace any HTML `<br>` tags in the `->description` with a
+    newline character `\r\n`. However, the usage of `str_replace` seems incorrect as it is treating
+    the pattern `/<br.*>/U` as a string literal instead of a regular expression pattern. -->
     <h3>{!! str_replace('/<br.*>/U', '\r\n', htmlspecialchars_decode($notiz->description)) !!}</h3>
     <br>
     @if ($notiz->completed)

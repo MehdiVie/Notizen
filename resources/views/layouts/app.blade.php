@@ -16,6 +16,8 @@
 </head>
 <body class="container mb-10 mt-30 max-w-lg">
 
+    <!-- The code you provided is creating a navigation bar using Bootstrap classes and styling. Here's a
+    breakdown of what each part of the code is doing: -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" style="margin-top: -30px;" href="/notizbuch">
@@ -79,6 +81,8 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<!-- This script is responsible for handling live search functionality on the webpage. Here's a breakdown
+of what it does: -->
     <script>
       $(document).ready(function(){
       

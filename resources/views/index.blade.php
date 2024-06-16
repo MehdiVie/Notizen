@@ -8,6 +8,7 @@
 
 
 <div>
+
         @forelse ($notizbuch as $notiz)
 
             @php($i = $i + 1)

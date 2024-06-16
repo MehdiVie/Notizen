@@ -4,6 +4,8 @@
 
 @section('content')
 
+<!-- The provided HTML code snippet is creating a search interface within a web page. Here's a breakdown
+of what each part of the code is doing: -->
   <div class="container box">
    
    
