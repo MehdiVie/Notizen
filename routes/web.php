@@ -86,6 +86,8 @@ Route::get('/notiz/{notiz}/edit', function(Notizbuch $notiz) {
 
     checkValidUser($notiz->user_id);
 
+    $notiz->description=str_replace('<br />',PHP_EOL, htmlspecialchars_decode($notiz['description'], ENT_NOQUOTES));
+
     return view("edit", [
         'notiz'=>$notiz
     ]);
