@@ -10,7 +10,8 @@ use \App\Models\Notizbuch;
 use \App\Http\Middleware\CheckPermission;
 use \App\Http\Requests\NotizRequest;
 use Illuminate\Routing\RouteFileRegistrar;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
 
 /**
  * The function `checkValidUser` in PHP checks if the authenticated user has access to a specific user
@@ -52,7 +53,8 @@ Route::get('/notizbuch', function ()  {
     }
 
     $query=DB::table('notizbuches')->whereRaw('user_id=?',Auth::id())
-                                   ->orderBy('updated_at', 'DESC')->get();
+    ->orderBy('updated_at', 'DESC')->paginate(5,['*'], 'page');
+ 
 
     return view('index',[
         'notizbuch' => $query 
