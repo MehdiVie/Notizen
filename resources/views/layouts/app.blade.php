@@ -18,7 +18,7 @@
 
     <!-- The code you provided is creating a navigation bar using Bootstrap classes and styling. Here's a
     breakdown of what each part of the code is doing: -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-sm bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" style="margin-top: -30px;" href="/notizbuch">
             <img src="/images/notes.png" width="60" alt="All Notes">

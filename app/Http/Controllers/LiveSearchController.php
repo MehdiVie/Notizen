@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use \App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 /* The `LiveSearchController` class in PHP handles live search functionality by querying a database
 table based on user input and returning results in JSON format. */
