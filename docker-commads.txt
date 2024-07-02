@@ -1,0 +1,6 @@
+docker ps -aqf "name=notizbuch"
+
+
+docker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE > backup.sql   
+
+cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE
